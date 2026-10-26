@@ -6,10 +6,6 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
-/**
- * Entidade Aluno – referência de padrão para o mapeamento JPA.
- * O Hibernate criará automaticamente a tabela "aluno" no PostgreSQL.
- */
 @Entity
 @Table(name = "aluno")
 public class Aluno {
@@ -22,23 +18,13 @@ public class Aluno {
 
     private String matricula;
 
-    // -------------------------------------------------------
-    // Construtores
-    // -------------------------------------------------------
-
-    /** Construtor vazio – obrigatório pelo JPA. */
     public Aluno() {
     }
 
-    /** Construtor completo. */
     public Aluno(String nome, String matricula) {
         this.nome = nome;
         this.matricula = matricula;
     }
-
-    // -------------------------------------------------------
-    // Getters e Setters
-    // -------------------------------------------------------
 
     public Long getId() {
         return id;
@@ -63,10 +49,6 @@ public class Aluno {
     public void setMatricula(String matricula) {
         this.matricula = matricula;
     }
-
-    // -------------------------------------------------------
-    // toString
-    // -------------------------------------------------------
 
     @Override
     public String toString() {

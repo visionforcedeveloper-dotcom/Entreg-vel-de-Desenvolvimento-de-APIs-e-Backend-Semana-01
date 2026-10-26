@@ -6,15 +6,6 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
-/**
- * Entidade Curso – mapeamento JPA seguindo o mesmo padrão da entidade Aluno.
- * O Hibernate criará automaticamente a tabela "curso" no PostgreSQL.
- *
- * Campos:
- *   - id       : chave primária gerada automaticamente
- *   - descricao: nome/descrição do curso
- *   - turno    : turno em que o curso é oferecido (ex.: Manhã, Tarde, Noite)
- */
 @Entity
 @Table(name = "curso")
 public class Curso {
@@ -27,23 +18,13 @@ public class Curso {
 
     private String turno;
 
-    // -------------------------------------------------------
-    // Construtores
-    // -------------------------------------------------------
-
-    /** Construtor vazio – obrigatório pelo JPA. */
     public Curso() {
     }
 
-    /** Construtor completo. */
     public Curso(String descricao, String turno) {
         this.descricao = descricao;
         this.turno = turno;
     }
-
-    // -------------------------------------------------------
-    // Getters e Setters
-    // -------------------------------------------------------
 
     public Long getId() {
         return id;
@@ -68,10 +49,6 @@ public class Curso {
     public void setTurno(String turno) {
         this.turno = turno;
     }
-
-    // -------------------------------------------------------
-    // toString
-    // -------------------------------------------------------
 
     @Override
     public String toString() {
